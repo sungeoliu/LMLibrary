@@ -59,8 +59,8 @@ static DocumentManager * sDefaultManager = nil;
         return nil;
     }else{
         NSString * filename = [self timeStringWithSuffix:suffix];
-        NSString * filePath = [imagePath stringByAppendingString:filename];
-        return [NSURL URLWithString:filePath];
+        NSString * filePath = [imagePath stringByAppendingPathComponent:filename];
+        return [NSURL fileURLWithPath:filePath isDirectory:NO];
     }
 }
 
@@ -70,8 +70,8 @@ static DocumentManager * sDefaultManager = nil;
         return nil;
     }else{
         NSString * filename = [self timeStringWithSuffix:suffix];
-        NSString * filePath = [soundPath stringByAppendingString:filename];
-        return [NSURL URLWithString:filePath];
+        NSString * filePath = [soundPath stringByAppendingPathComponent:filename];
+        return [NSURL fileURLWithPath:filePath isDirectory:NO];
     }
 }
 
