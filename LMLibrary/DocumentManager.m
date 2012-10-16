@@ -60,6 +60,11 @@ static DocumentManager * sDefaultManager = nil;
     }else{
         NSString * filename = [self timeStringWithSuffix:suffix];
         NSString * filePath = [imagePath stringByAppendingPathComponent:filename];
+        
+        // 文件系统中的路径"/usr/liuwanwei/..."经过fileURLWithPath转换后，
+        // 变成“file://usr/liuwanwei/...”形式。
+        // 要想返回字符串：NSString * stringFormat =  [xxx absoluteString];
+        // 要想转换回URL类型：NSURL * url = [NSURL URLWithString:stringFormat];
         return [NSURL fileURLWithPath:filePath isDirectory:NO];
     }
 }
