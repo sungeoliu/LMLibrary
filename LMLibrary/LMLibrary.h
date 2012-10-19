@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "BaseManager.h"
+#import "DocumentManager.h"
+
+#define AppString(key)          NSLocalizedString(key, nil)
+#define CustomString(key, file) NSLocalizedStringFromTable(key, file, nil)
+
+#define RGBRatio(x)             ((CGFloat)x / 255)
+#define RGBColor(r, g, b)       [UIColor colorWithRed:RGBRatio(r) green:RGBRatio(g) blue:RGBRatio(b) alpha:1.0]
+
+
 @interface LMLibrary : NSObject
 
 @end
