@@ -49,8 +49,9 @@ static DocumentManager * sDefaultManager = nil;
 }
 
 - (NSString *)timeStringWithSuffix:(NSString *)suffix{
+    static int chaosCounter = 1;
     time_t now = time(NULL);
-    return [NSString stringWithFormat:@"%ld.%@", now, suffix];
+    return [NSString stringWithFormat:@"%ld-%d.%@", now, chaosCounter++, suffix];
 }
 
 - (NSURL *)pathForRandomImageWithSuffix:(NSString *)suffix{
