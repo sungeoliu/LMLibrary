@@ -40,7 +40,7 @@ static DocumentManager * sDefaultManager = nil;
     if (![fileManager fileExistsAtPath:path]) {
         NSError * error = nil;
         [fileManager createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:&error];
-        if ([fileManager fileExistsAtPath:path]) {
+        if (! [fileManager fileExistsAtPath:path]) {
             return NO;
         }
     }
