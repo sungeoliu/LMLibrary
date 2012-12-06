@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E63BA2D8166E07A600EF22DA /* ChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63BA2D7166E07A600EF22DA /* ChoiceViewController.m */; };
 		E687F8B31625555700BA0AF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F8B21625555700BA0AF0 /* Foundation.framework */; };
 		E687F8B81625555700BA0AF0 /* LMLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E687F8B71625555700BA0AF0 /* LMLibrary.h */; };
 		E687F8BA1625555700BA0AF0 /* LMLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F8B91625555700BA0AF0 /* LMLibrary.m */; };
@@ -29,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E63BA2D6166E07A600EF22DA /* ChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceViewController.h; sourceTree = "<group>"; };
+		E63BA2D7166E07A600EF22DA /* ChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceViewController.m; sourceTree = "<group>"; };
 		E687F8AF1625555700BA0AF0 /* libLMLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLMLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E687F8B21625555700BA0AF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E687F8B61625555700BA0AF0 /* LMLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LMLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 		E687F8B41625555700BA0AF0 /* LMLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				E63BA2D6166E07A600EF22DA /* ChoiceViewController.h */,
+				E63BA2D7166E07A600EF22DA /* ChoiceViewController.m */,
 				E687F8C31625574700BA0AF0 /* BaseManager.h */,
 				E687F8C41625574700BA0AF0 /* BaseManager.m */,
 				E687F8B71625555700BA0AF0 /* LMLibrary.h */,
@@ -156,6 +161,7 @@
 				E687F8BA1625555700BA0AF0 /* LMLibrary.m in Sources */,
 				E687F8C51625574800BA0AF0 /* BaseManager.m in Sources */,
 				E687F917162BE81300BA0AF0 /* DocumentManager.m in Sources */,
+				E63BA2D8166E07A600EF22DA /* ChoiceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
