@@ -20,8 +20,4 @@
 
 @interface LMLibrary : NSObject
 
-+ (LMLibrary *)defaultManager;
-
-- (void)postNotificationWithName:(NSString *)name withObject:(id)object;
-
 @end
