@@ -16,6 +16,8 @@
 - (NSURL *)pathForRandomImageWithSuffix:(NSString *)suffix;
 - (NSURL *)pathForRandomSoundWithSuffix:(NSString *)suffix;
 
+- (NSString *)soundPath;
+
 - (BOOL)saveImage:(UIImage *)image toURL:(NSURL *)url;
 
 @end
