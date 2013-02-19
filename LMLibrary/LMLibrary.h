@@ -17,6 +17,14 @@
 #define RGBRatio(x)             ((CGFloat)x / 255)
 #define RGBColor(r, g, b)       [UIColor colorWithRed:RGBRatio(r) green:RGBRatio(g) blue:RGBRatio(b) alpha:1.0]
 
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
 
 @interface LMLibrary : NSObject
 
