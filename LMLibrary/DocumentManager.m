@@ -35,6 +35,11 @@ static DocumentManager * sDefaultManager = nil;
     return [rootDirectory stringByAppendingPathComponent:@"sound"];
 }
 
+- (NSString *)videoPath{
+    NSString * rootDirectory = [self documentDirectory];
+    return [rootDirectory stringByAppendingPathComponent:@"video"];
+}
+
 - (BOOL)createPathIfNotExist:(NSString *)path{
     NSFileManager * fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:path]) {
@@ -55,11 +60,16 @@ static DocumentManager * sDefaultManager = nil;
 }
 
 - (NSURL *)pathForRandomImageWithSuffix:(NSString *)suffix{
+    NSString * fileExtension = suffix;
+    if (nil == fileExtension) {
+        fileExtension = DefaultImageExtension;
+    }
+    
     NSString * imagePath = [self imagePath];
     if (![self createPathIfNotExist:imagePath]) {
         return nil;
     }else{
-        NSString * filename = [self timeStringWithSuffix:suffix];
+        NSString * filename = [self timeStringWithSuffix:fileExtension];
         NSString * filePath = [imagePath stringByAppendingPathComponent:filename];
         
         // 文件系统中的路径"/usr/liuwanwei/..."经过fileURLWithPath转换后，
@@ -71,12 +81,33 @@ static DocumentManager * sDefaultManager = nil;
 }
 
 - (NSURL *)pathForRandomSoundWithSuffix:(NSString *)suffix{
+    NSString * fileExtension = suffix;
+    if (nil == suffix) {
+        fileExtension = DefaultSoundExtension;
+    }
+    
     NSString * soundPath = [self soundPath];
     if (![self createPathIfNotExist:soundPath]) {
         return nil;
     }else{
-        NSString * filename = [self timeStringWithSuffix:suffix];
+        NSString * filename = [self timeStringWithSuffix:fileExtension];
         NSString * filePath = [soundPath stringByAppendingPathComponent:filename];
+        return [NSURL fileURLWithPath:filePath isDirectory:NO];
+    }
+}
+
+- (NSURL *)pathForRandomVideoWithSuffix:(NSString *)suffix{
+    NSString * fileExtension = suffix;
+    if (nil == suffix) {
+        fileExtension = DefaultVideoExtension;
+    }
+    
+    NSString * path = [self videoPath];
+    if (![self createPathIfNotExist:path]) {
+        return nil;
+    }else{
+        NSString * filename = [self timeStringWithSuffix:fileExtension];
+        NSString * filePath = [path stringByAppendingPathComponent:filename];
         return [NSURL fileURLWithPath:filePath isDirectory:NO];
     }
 }

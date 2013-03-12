@@ -9,12 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define DefaultImageExtension               @"png"
+#define DefaultVideoExtension               @"mp4"
+#define DefaultSoundExtension               @"m4a"
+
 @interface DocumentManager : NSObject
 
 + (DocumentManager *)defaultManager;
 
 - (NSURL *)pathForRandomImageWithSuffix:(NSString *)suffix;
 - (NSURL *)pathForRandomSoundWithSuffix:(NSString *)suffix;
+- (NSURL *)pathForRandomVideoWithSuffix:(NSString *)suffix;
 
 - (NSString *)soundPath;
 
