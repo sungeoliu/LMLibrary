@@ -21,6 +21,9 @@
 - (NSURL *)pathForRandomSoundWithSuffix:(NSString *)suffix;
 - (NSURL *)pathForRandomVideoWithSuffix:(NSString *)suffix;
 
+// TODO 测试用图片目录里的文件测试图片上传，所以需要生成文件路径。
+- (NSString *)imagePath;
+
 - (NSString *)soundPath;
 
 - (BOOL)saveImage:(UIImage *)image toURL:(NSURL *)url;

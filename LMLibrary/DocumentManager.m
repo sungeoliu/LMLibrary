@@ -53,10 +53,20 @@ static DocumentManager * sDefaultManager = nil;
     return YES;
 }
 
++ (NSString *)dateStringForDate:(NSDate *)date{
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    return [formatter stringFromDate:date];
+}
+
 - (NSString *)timeStringWithSuffix:(NSString *)suffix{
     static int chaosCounter = 1;
-    time_t now = time(NULL);
-    return [NSString stringWithFormat:@"%ld-%d.%@", now, chaosCounter++, suffix];
+    
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd-HH-mm-ss";
+    NSString * now = [formatter stringFromDate:[NSDate date]];
+    
+    return [NSString stringWithFormat:@"%@-%d.%@", now, chaosCounter++, suffix];
 }
 
 - (NSURL *)pathForRandomImageWithSuffix:(NSString *)suffix{
