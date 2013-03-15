@@ -28,4 +28,6 @@
 
 - (BOOL)saveImage:(UIImage *)image toURL:(NSURL *)url;
 
+- (BOOL)deleteFile:(NSString *)filePath;
+
 @end

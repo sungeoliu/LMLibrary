@@ -132,4 +132,16 @@ static DocumentManager * sDefaultManager = nil;
     return YES;
 }
 
+- (BOOL)deleteFile:(NSString *)filePath{
+    NSFileManager * fm = [NSFileManager defaultManager];
+    NSError * error = nil;
+    if(![fm removeItemAtPath:filePath error:&error]){
+        NSLog(@"删除文件失败: %@", error.localizedDescription);
+        return NO;
+    }else{
+        NSLog(@"删除文件成功：%@", filePath);
+        return YES;        
+    }
+}
+
 @end
